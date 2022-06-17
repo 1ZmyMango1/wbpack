@@ -32,12 +32,17 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|jpeg)$/i,
         type: "asset",
+        parser: {
+          dataUrlCondition: {
+            maxSize: 21 * 1024,
+          },
+        },
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/i,
         type: "asset/resource",
         generator: {
-          filename: "font-[name].[hash:6][ext]",
+          filename: "fonts/[hash:6][ext]",
         },
       },
       {
