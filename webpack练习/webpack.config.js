@@ -1,6 +1,5 @@
 const path = require("path");
-
-const HtmlWebpackPlugin = requrie("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -16,4 +15,16 @@ module.exports = {
       filename: "index.html",
     }),
   ],
+  devServer: {
+    port: 999,
+    open: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
