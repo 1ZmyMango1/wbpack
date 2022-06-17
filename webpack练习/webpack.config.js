@@ -33,6 +33,13 @@ module.exports = {
         test: /\.(png|jpg|gif|jpeg)$/i,
         type: "asset",
       },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "font-[name].[hash:6][ext]",
+        },
+      },
     ],
   },
 };
