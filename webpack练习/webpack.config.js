@@ -18,10 +18,10 @@ module.exports = {
       filename: "index.html",
     }),
   ],
-  devServer: {
-    port: 999,
-    open: true,
-  },
+  // devServer: {
+  //   port: 999,
+  //   open: true,
+  // },
   module: {
     rules: [
       {
