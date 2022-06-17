@@ -1,5 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { resolve } = require("path");
+
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   mode: "production",
@@ -34,7 +37,7 @@ module.exports = {
         type: "asset",
         parser: {
           dataUrlCondition: {
-            maxSize: 21 * 1024,
+            maxSize: 8 * 1024,
           },
         },
       },
@@ -55,6 +58,11 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.vue$/i,
+        loader: "vue-loader",
+      },
     ],
   },
+  plugins: [new VueLoaderPlugin()],
 };
