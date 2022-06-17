@@ -23,3 +23,9 @@ document.body.appendChild(png);
 
 // 引入字体图标文件
 import "./assets/fonts/iconfont.css";
+
+const fn = () => {
+  console.log("测试处理高版本js语法功能");
+};
+
+console.log(fn);

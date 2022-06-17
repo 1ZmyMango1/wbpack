@@ -34,10 +34,20 @@ module.exports = {
         type: "asset",
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|svg|ttf|woff|woff2)$/i,
         type: "asset/resource",
         generator: {
           filename: "font-[name].[hash:6][ext]",
+        },
+      },
+      {
+        test: /\.js$/i,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"], // 预设:转码规则(用bable开发环境本来预设的)
+          },
         },
       },
     ],
