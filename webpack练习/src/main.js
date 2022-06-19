@@ -29,10 +29,10 @@ const fn = () => {
 };
 
 console.log(fn);
+// import "./app.vue";
 
-// import App from "./app.vue";
-// import Vue from "vue";
+import App from "./app.vue";
+import { createApp } from "vue";
 
-// new Vue({
-//   render: (h) => h(App),
-// }).$mount("#app");
+const app = createApp(App);
+app.mount("#app");
